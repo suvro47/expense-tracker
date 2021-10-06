@@ -1,0 +1,21 @@
+
+
+.filtered-expenses {
+    width : 50%;
+    margin : auto;
+    display : flex;
+    justify-content : space-between;
+    padding : 20px;
+    background-color : black;
+    border-radius : 10px 10px 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.filtered-expense__heading {
+    padding: 5px;
+}
+
+.filtered-expense__select {
+    padding: 5px;
+    font-size: 15px;
+}

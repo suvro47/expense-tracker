@@ -1,0 +1,9 @@
+
+.expense-item__container {
+    width : 50%;
+    margin : auto;
+    padding : 10px 20px 20px 20px;
+    background-color : black;
+    border-radius : 0 0 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

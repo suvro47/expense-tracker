@@ -1,0 +1,70 @@
+
+.expense-item {
+    margin : auto;
+    padding : 10px;
+    display : flex;
+    background-color : rgb(68, 66, 66);
+    margin-top: 10px;
+    border-radius : 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.expense-item__description {
+    display : flex;
+    flex : 12;
+    justify-content : space-between;
+}
+
+.expense-item__date {
+   margin-right : 20px;
+   display : flex;
+   flex : 1;
+   flex-direction: column;
+   align-items : center;
+   font-weight : 500;
+   border : 2px white solid;
+   padding : 5px;
+   background-color : black;
+   border-radius : 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.expense-item__title {
+    display : flex;
+    flex-direction: column;
+    justify-content : center;
+    padding : 8px;
+    font-weight : 700;
+    font-size : 20px;
+}
+
+.expense-item__price {
+    display : flex;
+    flex-direction: column;
+    justify-content : center;
+}
+
+.expense-item__cost {
+    background-color : rgb(62, 10, 121);
+    font-weight : 500;
+    font-size : 18px;
+    border-radius: 10px;
+    border : 2px white solid;
+    padding : 5px 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.expense-item__date__month {
+    font-weight : 500;
+    font-size : 15px;
+}
+
+.expense-item__date__year {
+    font-size : 10px;
+}
+
+.expense-item__date__day {
+    font-weight : 700;
+    font-size : 20px;
+}
+
