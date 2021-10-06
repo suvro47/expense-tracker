@@ -5,24 +5,17 @@ import "./ExpenseFilter.css";
 
 export default function ExpensesFilter(props) {
 
-    console.log("expense filter re-rendered ");
-
     const [filteredExpenses, setFilteredExpenses] = useState(props.items);
-    const [selectedYear, setSelectedYear] = useState(0);
-
-    const originalData = [...props.items];
-
 
     const onChanageHandler = (event) => {
         alert(event.target.value);
         const selectedYear = event.target.value;
+        const originalData = [...props.items];
         const filteredData = originalData.filter(item => {
             const formatedDate = new Date(item.date);
             return (formatedDate.getFullYear().toString() === selectedYear || selectedYear === "0")
         });
-        console.log(filteredData);
         setFilteredExpenses(filteredData);
-        setSelectedYear(selectedYear);
     }
 
     return (
@@ -40,8 +33,7 @@ export default function ExpensesFilter(props) {
                 </div>
             </div>
 
-            {!selectedYear ? <Expenses items={originalData} /> : <Expenses items={filteredExpenses} />}
-
+            <Expenses items={filteredExpenses} />
         </>
     );
 }
