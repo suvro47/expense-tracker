@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseFilter from './components/ExpenseFilter';
-import Expenses from './components/Expenses';
 
 function App() {
 
