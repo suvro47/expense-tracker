@@ -6,8 +6,6 @@ import Expenses from './components/Expenses';
 
 function App() {
 
-  console.log("App re-rendered")
-
   const DUMMY_EXPENSES = [
     {
       id: 1,
@@ -30,8 +28,6 @@ function App() {
   ]
 
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-  const [filteredExpenses, setFilteredExpenses] = useState(DUMMY_EXPENSES);
-  const [selectedYear, setSelectedYear] = useState(0);
 
   const addExpenseHandler = (enteredExpenseData) => {
     setExpenses(prevExpenses => {
@@ -39,23 +35,10 @@ function App() {
     });
   }
 
-  // getting filtered data from child component ExpenseFilter
-  const filterHandler = (filteredItems) => {
-    console.log(filteredItems);
-    setFilteredExpenses(filteredItems);
-  }
-
-  // getting selected Year from child component ExpenseFilter
-  const yearHandler = (year) => {
-    console.log(year);
-    setSelectedYear(year);
-  }
-
   return (
     <div className="App">
       <ExpenseForm addExpense={addExpenseHandler} />
-      <ExpenseFilter items={expenses} doFilter={filterHandler} setYear={yearHandler} />
-      {!selectedYear ? <Expenses items={expenses} /> : <Expenses items={filteredExpenses} />}
+      <ExpenseFilter items={expenses} />
     </div>
   );
 }

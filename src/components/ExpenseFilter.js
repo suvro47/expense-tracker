@@ -1,17 +1,21 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import Expenses from './Expenses';
 import "./ExpenseFilter.css";
 
 export default function ExpensesFilter(props) {
 
-    console.log("Filtered Expenses re-rendered")
+    const [filteredExpenses, setFilteredExpenses] = useState(props.items);
+    const [selectedYear, setSelectedYear] = useState(0);
 
     const onChanageHandler = (event) => {
         alert(event.target.value);
         const selectedYear = event.target.value;
         const temp = [...props.items];
-        props.doFilter(temp);
-        props.setYear(selectedYear);
+        // do filter here..
+        // temp.splice(0, 1);
+        setFilteredExpenses(temp);
+        setSelectedYear(selectedYear);
     }
 
     return (
@@ -28,6 +32,8 @@ export default function ExpensesFilter(props) {
                     </select>
                 </div>
             </div>
+
+            {!selectedYear ? <Expenses items={props.items} /> : <Expenses items={filteredExpenses} />}
         </>
     );
 }
