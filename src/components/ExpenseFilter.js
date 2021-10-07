@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Expenses from './Expenses';
 import "./ExpenseFilter.css";
 
@@ -7,13 +7,17 @@ export default function ExpensesFilter(props) {
 
     const [filteredExpenses, setFilteredExpenses] = useState(props.items);
 
+    useEffect(() => {
+        setFilteredExpenses(props.items);
+    }, [props])
+
     const onChanageHandler = (event) => {
         alert(event.target.value);
         const selectedYear = event.target.value;
         const originalData = [...props.items];
         const filteredData = originalData.filter(item => {
             const formatedDate = new Date(item.date);
-            return (formatedDate.getFullYear().toString() === selectedYear || selectedYear === "0")
+            return (formatedDate.getFullYear().toString() === selectedYear || selectedYear == 0)
         });
         setFilteredExpenses(filteredData);
     }
