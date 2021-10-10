@@ -12,7 +12,6 @@ export default function ExpensesFilter(props) {
     }, [props])
 
     const onChanageHandler = (event) => {
-        alert(event.target.value);
         const selectedYear = event.target.value;
         const originalData = [...props.items];
         const filteredData = originalData.filter(item => {
@@ -28,7 +27,7 @@ export default function ExpensesFilter(props) {
                 <div className="filtered-expense__heading"> Filter by year </div>
                 <div className="filtered-expense__dropdown">
                     <select className="filtered-expense__select" onChange={onChanageHandler}>
-                        <option value="0"> Select  </option>
+                        <option value="0"> All  </option>
                         <option value="2021"> 2021 </option>
                         <option value="2020"> 2020 </option>
                         <option value="2019"> 2019 </option>
