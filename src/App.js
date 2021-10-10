@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseFilter from './components/ExpenseFilter';
+import Expenses from "./components/Expenses";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
     <div className="App">
       <ExpenseForm addExpense={addExpenseHandler} />
       <ExpenseFilter items={expenses} />
+      {/* <Expenses items={expenses} /> */}
     </div>
   );
 }
